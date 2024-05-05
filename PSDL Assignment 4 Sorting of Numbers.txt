@@ -1,0 +1,38 @@
+#include<xc.h>
+#include<stdio.h>
+#include<stdlib.h>
+#include<pic18f4550.h>
+
+void main(void) {
+    int i,j;
+    int s[5] = {0x06, 0x04 , 0x05 , 0x07, 0x02};
+    for(i = 0; i< 5; i++)
+    {
+        for(j =0; j < (i-5); j++)
+        {
+            if(s[j] > s[j+1])
+            {
+                int temp = s[j];
+                s[j] = s[j+1];
+                s[j+1] = temp;
+            }
+        }
+    }
+    TRISD = 0x00;
+    for(i =0; i < 5; i++)
+    {
+        PORTD = s[i];
+        for(j =  0; j < 1000; j++)
+        {
+            for(int h = 0; h < 20 ; h++)
+            {
+                
+            }
+        }
+            
+            }
+        }
+    }
+
+    return 0;
+}
